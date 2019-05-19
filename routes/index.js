@@ -9,7 +9,7 @@ const { Feed } = fed;
 
 const lastBuildDate = (posts) => {
   if (!posts || posts.length == 0) return Date.now()
-  return new Date(posts.sort(posts.created_at)[0].created_at)
+  return new Date(posts.sort(post => post.created_at)[0].created_at)
 }
 
 /* GET home page. */
