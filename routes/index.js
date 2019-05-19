@@ -22,7 +22,7 @@ router.get('/recent', function (req, res, next) {
     let feed = new Feed({
       title: 'times',
       description: 'times',
-      lastBuildDate: lastBuildDate(POSTS)
+      lastBuildDate: lastBuildDate(POSTS.recent)
     });
 
     POSTS.recent.sort(e => e.created_at).reverse().forEach(e => {
@@ -47,7 +47,7 @@ router.get('/quality', function (req, res, next) {
     let feed = new Feed({
       title: 'times',
       description: 'times',
-      lastBuildDate: lastBuildDate(POSTS)
+      lastBuildDate: lastBuildDate(POSTS.quality)
     });
 
     POSTS.quality.sort(e => e.score).forEach(e => {
